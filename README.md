@@ -50,7 +50,7 @@ void radix_sort(int *v, int n){
 ```
 Note que definimos um vetor temporário chamado **temp** alocado dinamicamente e por fim liberamos a memória pela função **free()**, este será utilizado para montar a saída do countsorting antes de copiarmos de volta para o vetor principal **v**, .
 
-
+**O próximo passo** é implementar esse **countsort** específico que irá contar a frequência  de um determinado dígito/posição, vejamos no código abaixo:  
 
 
 
