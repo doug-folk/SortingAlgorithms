@@ -31,7 +31,7 @@ Agora, classificamos todos esses números “no lugar” usando o dígito na cas
   <img src="https://user-images.githubusercontent.com/114185919/202924547-405f88b3-6d0a-4363-b715-4cc717dc1c4b.png" height="300px" />
 </div>
 
-Primeiro precisamos saber qual a maior chave do vetor, usando a função max, pq precisamos saber quantas vezes iremos executar o procedimento do **coutsort** na próxima potência. usar uma função chamada **max** que podemos criar em outro ponto do programa,  que recebe o vetor e a quantidade de elementos retornando o maior elemento desse vetor.
+Primeiro precisamos saber qual a maior chave do vetor, usando a função max, para descobirmos quantas vezes iremos executar o procedimento do **coutsort** na próxima potência. usar uma função chamada **max** que podemos criar em outro ponto do programa,  que recebe o vetor e a quantidade de elementos retornando o maior elemento desse vetor.
 ```c
 void radix_sort(int *v, int n){
     int k, div = 1;
