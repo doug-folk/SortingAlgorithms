@@ -48,7 +48,7 @@ void radix_sort(int *v, int n){
 }
 
 ```
-Note que definimos um vetor temporário chamado **temp** , que será utilizado para montar a saída do countsorting antes de copiarmos de volta para o vetor principal **v**, alocado dinamicamente e por fim liberamos a memória pela função **free()**.
+Note que definimos um vetor temporário chamado **temp** alocado dinamicamente e por fim liberamos a memória pela função **free()**, este será utilizado para montar a saída do countsorting antes de copiarmos de volta para o vetor principal **v**, .
 
 
 
