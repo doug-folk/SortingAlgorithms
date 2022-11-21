@@ -78,10 +78,10 @@ void counting_sort(int *v, int n, int div, int base, int *temp){
 }
 ```
 Levamos em conta alguns aspectos para criação da função counting_sort como:
-– variável temporária para a soma de prefixo.
-– vetor para guardar a contagem de cada dígito.
-– acumulador que será usado junto ao bloco de soma de prefixo.
-–  memset para zerar o vetor c.
+- variável temporária para a soma de prefixo.
+- vetor para guardar a contagem de cada dígito.
+- acumulador que será usado junto ao bloco de soma de prefixo.
+- memset para zerar o vetor c.
 
 Criamos uma macro chamada DIGIT recebendo a chave (x) que vai ser resolvida em tempo de compilação, sem chamadas de função.
 
