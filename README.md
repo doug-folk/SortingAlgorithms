@@ -51,6 +51,44 @@ void radix_sort(int *v, int n){
 Note que definimos um vetor temporário chamado **temp** alocado dinamicamente e por fim liberamos a memória pela função **free()**, este será utilizado para montar a saída do countsorting antes de copiarmos de volta para o vetor principal **v**, .
 
 **O próximo passo** é implementar esse **countsort** específico que irá contar a frequência  de um determinado dígito/posição, vejamos no código abaixo:  
+```c
+void counting_sort(int *v, int n, int div, int base, int *temp){
+    int i, t, c[base], acum = 0;
+    memset(c, 0, base * sizeof(int));
+
+    #define DIGIT(x) (x / div) % base
+
+    for(i = 0; i < n; i++){
+        c[DIGIT(v[i])]++;
+    }
+
+    for(i = 0; i < base; i++){
+        t = c[i];
+        c[i] = acum;
+        acum += t;
+    }
+
+    for (i = 0; i < n; i++){
+        temp[c[DIGIT(v[i])]] = v[i];
+        c[DIGIT(v[i])]++;
+    }
+
+    memcpy(v, temp, sizeof(int) * n);
+    
+}
+```
+Levamos em conta alguns aspectos para criação da função counting_sort como:
+– variável temporária para a soma de prefixo.
+– vetor para guardar a contagem de cada dígito.
+– acumulador que será usado junto ao bloco de soma de prefixo.
+–  memset para zerar o vetor c.
+
+Criamos uma macro chamada DIGIT recebendo a chave (x) que vai ser resolvida em tempo de compilação, sem chamadas de função.
+
+Esta etapa do algoritimo, trata-se da contagem da frequência dos dígitos, onde passamos por todos os elementos do nosso vetor e incrementamos a posição no vetor **c** que corresponde ao dígito avaliado no dado momento na chave atual.
+Em seguida é feito a soma de prefixo onde passamos por cada posição, e atualizamos o valor anterior de **c[i]**.
+Por fim copiamos os elementos de *v* no vetor temporário obedecendo os índices de nosso vetor **c** que agora tem a soma de prefixos e atualizamos o vetor para não subscrevemos o valor que acabamos de colocar na posição correta, então por meio da função *memcpy* é copiado de volta para *v* os elementos de temp, que agora estão ordenados.
+
 
 
 
