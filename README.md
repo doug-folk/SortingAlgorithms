@@ -99,7 +99,7 @@ Esta estratégia tem potencial de obter melhor desempenho quando **(i)** as orde
 
 
 
-
+hhhhhhhh
 
 
 
