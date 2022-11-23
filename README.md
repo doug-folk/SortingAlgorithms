@@ -89,6 +89,10 @@ Esta etapa do algoritimo, trata-se da contagem da frequência dos dígitos, onde
 Em seguida é feito a soma de prefixo onde passamos por cada posição, e atualizamos o valor anterior de **c[i]**.
 Por fim copiamos os elementos de *v* no vetor temporário obedecendo os índices de nosso vetor **c** que agora tem a soma de prefixos e atualizamos o vetor para não subscrevemos o valor que acabamos de colocar na posição correta, então por meio da função *memcpy* é copiado de volta para *v* os elementos de temp, que agora estão ordenados.
 
+# Shell sort
+O Shellsort é um algoritmo de ordenação por comparação proveniente de uma generalização do algoritmo de ordenação por inserção (InsertionSort). A ordenação por Shellsort constitui-se de execuções sequenciais de InsertionSort sobre subconjuntos tomados dos *n* elementos do vetor de entrada, sendo que o último subconjunto é aquele de todos os elementos (ou seja, é uma execução padrão do InsertionSort). 
+
+Esta estratégia tem potencial de obter melhor desempenho quando **(i)** as ordenações anteriores à última atuam sobre subconjuntos de elementos de tamanhos controlados, de modo que o custo do pior caso para estas execuções iniciais tenham peso reduzido no custo total; e **(ii)** os elementos escolhidos para serem pré-ordenados são tais que evitam o pior caso quadrático do último InsertionSort, de modo que a diminuição do custo na última execução compense as ordenações parciais anteriores.
 
 
 
