@@ -2,9 +2,46 @@
 
 Algoritmo de ordenação é um algoritmo que coloca os elementos de uma dada sequência em uma certa ordem. Ele efetua sua ordenação completa ou parcial. O objetivo da ordenação é facilitar a recuperação dos dados de uma lista.
 
-Para este artigo foram escolhidos alguns algoritmos de ordenação para serem estudados que são: **Radix Sort e Shell Sort**.
+Para este artigo foi escolhido o algoritmo de ordenação **Radix Sort para serem estudado/analisado.
 
 ## Radix sort 
+Para construção do radix é necessário previamente sabermos o conceito e funcionamento do **CoutingSort** para um melhor entendimento da nossa estrutura.
+Com o counting sort usamos um vetor auxiliar de tamanho igual ao maior valor a ser ordenado, onde este vetor auxiliar é usado para contar a ocorrência de cada valor, assim o valor a ser ordenado irá ser tratado com um índice, ou seja, usaremos ele com índice no nosso vetor para fazermos a contagem. Assim posteriormente podemos percorrer o array auxiliar verificando quais valores existem e dessa forma gerar o vetor ordenado
+
+Devemos levar em consideração algun pontos desse método, como:
+- Não é recomendado para uso em grandes conjuntos de valores/dados.
+- Possui um processamento simples.
+- E é estável, ou seja, ele não altera a ordem de dados iguais.
+
+#### Abaixo podemos analisar um exemplo desta implementação:
+```c
+#define MAX 100
+void countingSort(int *v, int n){
+  int i, j, k;
+  int box[MAX];
+  
+  for( i = 0; i < MAX; i++){
+    box[i] = 0;
+    }
+  for(i = 0; i < n; i++){
+    box[v[i]]++;
+  }
+  for(i = 0, j = 0; j < MAX; j++){
+    for(k = box[j]; k > 0; k--){
+      v[i++] = j;
+    }
+  }
+}
+```
+
+A ideia do Radix Sort é classificarmos dígito por dígito, sempre começando do dígito menos significativo para o mais significativo, neste algoritmo de ordenação usa-se a classificação por contagem como uma sub-rotina para classificar.
+## Tem como características:
+- Faz suposições de como os dados devem estar entre um intervalo de elementos.
+- A matriz de entrada deve ter os elementos com a mesma raiz e largura.
+- funciona na classificação com base em um dígito individual ou posição de letra.
+- Começamos a classificação da posição mais à direita e é ideal usarmos um algoritmo estável para cada posição.
+- Usa uma matriz de contagem temporária. 
+
 Esse  algoritimo assume que todos os elementos de entrada são de base **d**. Isso significa que todos os números são **d** números de dígitos.
 O que basicamente fazemos é, primeiro classificamos cada elemento com base no valor da sua unidade (*dígito menos significativo*). Em seguida, classificamos os valores com base no valor da décima casa (*ao lado do dígito menos significativo*). Este processo é feito até chegarmos aos dígitos mais significativos.
 - Pegue o dígito menos significativo de cada elemento.
