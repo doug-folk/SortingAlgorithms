@@ -2,7 +2,7 @@
 
 Algoritmo de ordenação é um algoritmo que coloca os elementos de uma dada sequência em uma certa ordem. Ele efetua sua ordenação completa ou parcial. O objetivo da ordenação é facilitar a recuperação dos dados de uma lista.
 
-Para este artigo foi escolhido o algoritmo de ordenação **Radix Sort para serem estudado/analisado.
+Para este artigo foi escolhido o algoritmo de ordenação **Radix Sort** para serem estudado/analisado.
 
 ## Radix sort 
 Para construção do radix é necessário previamente sabermos o conceito e funcionamento do **CoutingSort** para um melhor entendimento da nossa estrutura.
